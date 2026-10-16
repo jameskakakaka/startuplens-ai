@@ -1,0 +1,37 @@
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model AnalysisRecord {
+  id                 String   @id @default(uuid())
+
+  startupName        String
+  industry           String
+
+  input              Json
+  analysis           Json
+
+  marketScore        Int
+  productScore       Int
+  defensibilityScore Int
+
+  confidence         String
+
+  model              String?
+
+  createdAt          DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([startupName])
+  @@index([marketScore])
+  @@index([productScore])
+  @@index([defensibilityScore])
+  @@index([confidence])
+}
+
