@@ -46,6 +46,7 @@ export type AnalysisRecordMinAggregateOutputType = {
   productScore: number | null
   defensibilityScore: number | null
   confidence: string | null
+  model: string | null
   createdAt: Date | null
 }
 
@@ -57,6 +58,7 @@ export type AnalysisRecordMaxAggregateOutputType = {
   productScore: number | null
   defensibilityScore: number | null
   confidence: string | null
+  model: string | null
   createdAt: Date | null
 }
 
@@ -70,6 +72,7 @@ export type AnalysisRecordCountAggregateOutputType = {
   productScore: number
   defensibilityScore: number
   confidence: number
+  model: number
   createdAt: number
   _all: number
 }
@@ -95,6 +98,7 @@ export type AnalysisRecordMinAggregateInputType = {
   productScore?: true
   defensibilityScore?: true
   confidence?: true
+  model?: true
   createdAt?: true
 }
 
@@ -106,6 +110,7 @@ export type AnalysisRecordMaxAggregateInputType = {
   productScore?: true
   defensibilityScore?: true
   confidence?: true
+  model?: true
   createdAt?: true
 }
 
@@ -119,6 +124,7 @@ export type AnalysisRecordCountAggregateInputType = {
   productScore?: true
   defensibilityScore?: true
   confidence?: true
+  model?: true
   createdAt?: true
   _all?: true
 }
@@ -219,6 +225,7 @@ export type AnalysisRecordGroupByOutputType = {
   productScore: number
   defensibilityScore: number
   confidence: string
+  model: string | null
   createdAt: Date
   _count: AnalysisRecordCountAggregateOutputType | null
   _avg: AnalysisRecordAvgAggregateOutputType | null
@@ -255,6 +262,7 @@ export type AnalysisRecordWhereInput = {
   productScore?: Prisma.IntFilter<"AnalysisRecord"> | number
   defensibilityScore?: Prisma.IntFilter<"AnalysisRecord"> | number
   confidence?: Prisma.StringFilter<"AnalysisRecord"> | string
+  model?: Prisma.StringNullableFilter<"AnalysisRecord"> | string | null
   createdAt?: Prisma.DateTimeFilter<"AnalysisRecord"> | Date | string
 }
 
@@ -268,6 +276,7 @@ export type AnalysisRecordOrderByWithRelationInput = {
   productScore?: Prisma.SortOrder
   defensibilityScore?: Prisma.SortOrder
   confidence?: Prisma.SortOrder
+  model?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -284,6 +293,7 @@ export type AnalysisRecordWhereUniqueInput = Prisma.AtLeast<{
   productScore?: Prisma.IntFilter<"AnalysisRecord"> | number
   defensibilityScore?: Prisma.IntFilter<"AnalysisRecord"> | number
   confidence?: Prisma.StringFilter<"AnalysisRecord"> | string
+  model?: Prisma.StringNullableFilter<"AnalysisRecord"> | string | null
   createdAt?: Prisma.DateTimeFilter<"AnalysisRecord"> | Date | string
 }, "id">
 
@@ -297,6 +307,7 @@ export type AnalysisRecordOrderByWithAggregationInput = {
   productScore?: Prisma.SortOrder
   defensibilityScore?: Prisma.SortOrder
   confidence?: Prisma.SortOrder
+  model?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.AnalysisRecordCountOrderByAggregateInput
   _avg?: Prisma.AnalysisRecordAvgOrderByAggregateInput
@@ -318,6 +329,7 @@ export type AnalysisRecordScalarWhereWithAggregatesInput = {
   productScore?: Prisma.IntWithAggregatesFilter<"AnalysisRecord"> | number
   defensibilityScore?: Prisma.IntWithAggregatesFilter<"AnalysisRecord"> | number
   confidence?: Prisma.StringWithAggregatesFilter<"AnalysisRecord"> | string
+  model?: Prisma.StringNullableWithAggregatesFilter<"AnalysisRecord"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"AnalysisRecord"> | Date | string
 }
 
@@ -331,6 +343,7 @@ export type AnalysisRecordCreateInput = {
   productScore: number
   defensibilityScore: number
   confidence: string
+  model?: string | null
   createdAt?: Date | string
 }
 
@@ -344,6 +357,7 @@ export type AnalysisRecordUncheckedCreateInput = {
   productScore: number
   defensibilityScore: number
   confidence: string
+  model?: string | null
   createdAt?: Date | string
 }
 
@@ -357,6 +371,7 @@ export type AnalysisRecordUpdateInput = {
   productScore?: Prisma.IntFieldUpdateOperationsInput | number
   defensibilityScore?: Prisma.IntFieldUpdateOperationsInput | number
   confidence?: Prisma.StringFieldUpdateOperationsInput | string
+  model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -370,6 +385,7 @@ export type AnalysisRecordUncheckedUpdateInput = {
   productScore?: Prisma.IntFieldUpdateOperationsInput | number
   defensibilityScore?: Prisma.IntFieldUpdateOperationsInput | number
   confidence?: Prisma.StringFieldUpdateOperationsInput | string
+  model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -383,6 +399,7 @@ export type AnalysisRecordCreateManyInput = {
   productScore: number
   defensibilityScore: number
   confidence: string
+  model?: string | null
   createdAt?: Date | string
 }
 
@@ -396,6 +413,7 @@ export type AnalysisRecordUpdateManyMutationInput = {
   productScore?: Prisma.IntFieldUpdateOperationsInput | number
   defensibilityScore?: Prisma.IntFieldUpdateOperationsInput | number
   confidence?: Prisma.StringFieldUpdateOperationsInput | string
+  model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -409,6 +427,7 @@ export type AnalysisRecordUncheckedUpdateManyInput = {
   productScore?: Prisma.IntFieldUpdateOperationsInput | number
   defensibilityScore?: Prisma.IntFieldUpdateOperationsInput | number
   confidence?: Prisma.StringFieldUpdateOperationsInput | string
+  model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -422,6 +441,7 @@ export type AnalysisRecordCountOrderByAggregateInput = {
   productScore?: Prisma.SortOrder
   defensibilityScore?: Prisma.SortOrder
   confidence?: Prisma.SortOrder
+  model?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -439,6 +459,7 @@ export type AnalysisRecordMaxOrderByAggregateInput = {
   productScore?: Prisma.SortOrder
   defensibilityScore?: Prisma.SortOrder
   confidence?: Prisma.SortOrder
+  model?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -450,6 +471,7 @@ export type AnalysisRecordMinOrderByAggregateInput = {
   productScore?: Prisma.SortOrder
   defensibilityScore?: Prisma.SortOrder
   confidence?: Prisma.SortOrder
+  model?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -471,6 +493,10 @@ export type IntFieldUpdateOperationsInput = {
   divide?: number
 }
 
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null
+}
+
 export type DateTimeFieldUpdateOperationsInput = {
   set?: Date | string
 }
@@ -487,6 +513,7 @@ export type AnalysisRecordSelect<ExtArgs extends runtime.Types.Extensions.Intern
   productScore?: boolean
   defensibilityScore?: boolean
   confidence?: boolean
+  model?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["analysisRecord"]>
 
@@ -500,6 +527,7 @@ export type AnalysisRecordSelectCreateManyAndReturn<ExtArgs extends runtime.Type
   productScore?: boolean
   defensibilityScore?: boolean
   confidence?: boolean
+  model?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["analysisRecord"]>
 
@@ -513,6 +541,7 @@ export type AnalysisRecordSelectUpdateManyAndReturn<ExtArgs extends runtime.Type
   productScore?: boolean
   defensibilityScore?: boolean
   confidence?: boolean
+  model?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["analysisRecord"]>
 
@@ -526,10 +555,11 @@ export type AnalysisRecordSelectScalar = {
   productScore?: boolean
   defensibilityScore?: boolean
   confidence?: boolean
+  model?: boolean
   createdAt?: boolean
 }
 
-export type AnalysisRecordOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "startupName" | "industry" | "input" | "analysis" | "marketScore" | "productScore" | "defensibilityScore" | "confidence" | "createdAt", ExtArgs["result"]["analysisRecord"]>
+export type AnalysisRecordOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "startupName" | "industry" | "input" | "analysis" | "marketScore" | "productScore" | "defensibilityScore" | "confidence" | "model" | "createdAt", ExtArgs["result"]["analysisRecord"]>
 
 export type $AnalysisRecordPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "AnalysisRecord"
@@ -544,6 +574,7 @@ export type $AnalysisRecordPayload<ExtArgs extends runtime.Types.Extensions.Inte
     productScore: number
     defensibilityScore: number
     confidence: string
+    model: string | null
     createdAt: Date
   }, ExtArgs["result"]["analysisRecord"]>
   composites: {}
@@ -977,6 +1008,7 @@ export interface AnalysisRecordFieldRefs {
   readonly productScore: Prisma.FieldRef<"AnalysisRecord", 'Int'>
   readonly defensibilityScore: Prisma.FieldRef<"AnalysisRecord", 'Int'>
   readonly confidence: Prisma.FieldRef<"AnalysisRecord", 'String'>
+  readonly model: Prisma.FieldRef<"AnalysisRecord", 'String'>
   readonly createdAt: Prisma.FieldRef<"AnalysisRecord", 'DateTime'>
 }
     

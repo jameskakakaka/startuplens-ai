@@ -26,6 +26,8 @@ const validRecord = {
 
   confidence: fixtureAnalysis.confidence,
 
+  model: null,
+
   createdAt: new Date("2026-10-15T10:00:00Z"),
 };
 

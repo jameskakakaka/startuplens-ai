@@ -22,7 +22,12 @@ const StoredRecordSchema = z.object({
   productScore: z.number().int(),
   defensibilityScore: z.number().int(),
 
+
+
   confidence: z.string(),
+
+  model: z.string().nullable(),
+
   createdAt: z.date(),
 });
 
